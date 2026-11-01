@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ก้าวน้อย | ศูนย์พัฒนาการและการบำบัดเด็ก</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@500;700&family=Noto+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#fffaf3;--surface:#ffffff;--ink:#33415c;--muted:#64708a;--line:#eadfce;
+  --navy:#3d5a80;--c1:#e6f0fa;--c2:#e9f6ec;--c3:#fdecf0;--c4:#fff3dc;--c5:#efe9fb;
+  --a1:#4a7fb5;--a2:#4f9a6a;--a3:#d0617f;--a4:#c98a1b;--a5:#7a62b8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1b2233;--surface:#252e44;--ink:#eef1f8;--muted:#a9b3c9;--line:#38425c;--navy:#9ec1ea;
+  --c1:#27384f;--c2:#25402f;--c3:#4a2c38;--c4:#47391c;--c5:#37305a;
+  --a1:#8cc0f0;--a2:#8fd3a5;--a3:#f2a1b7;--a4:#f0c16a;--a5:#c0aef0;}}
+:root[data-theme="dark"]{--bg:#1b2233;--surface:#252e44;--ink:#eef1f8;--muted:#a9b3c9;--line:#38425c;--navy:#9ec1ea;
+  --c1:#27384f;--c2:#25402f;--c3:#4a2c38;--c4:#47391c;--c5:#37305a;
+  --a1:#8cc0f0;--a2:#8fd3a5;--a3:#f2a1b7;--a4:#f0c16a;--a5:#c0aef0}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.75 "Noto Sans Thai",system-ui,sans-serif}
+h1,h2,h3{font-family:"Mali","Noto Sans Thai",sans-serif;line-height:1.35;margin:0;color:var(--navy)}
+a{color:inherit}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{font-family:"Mali",sans-serif;font-weight:700;font-size:20px;color:var(--navy);text-decoration:none;display:flex;gap:8px;align-items:center}
+nav a{margin-left:16px;text-decoration:none;font-weight:500;font-size:15px;color:var(--muted)}
+nav a:hover,nav a:focus-visible{color:var(--navy)}
+.hero{display:grid;gap:28px;align-items:center;padding:28px 0 48px}
+@media(min-width:800px){.hero{grid-template-columns:1.2fr 1fr}}
+.hero h1{font-size:clamp(30px,6vw,46px)}
+.hero p{color:var(--muted);max-width:34em;margin:14px 0 22px}
+.btn{display:inline-block;background:var(--navy);color:var(--bg);padding:12px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--navy)}
+.btn.ghost{background:transparent;color:var(--navy);margin-left:8px}
+.btn:focus-visible,.tab:focus-visible,.card:focus-visible{outline:3px solid var(--a4);outline-offset:2px}
+.blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:340px;margin:0 auto}
+.blk{aspect-ratio:1;border-radius:26px;display:grid;place-items:center;font-size:42px}
+.blk:nth-child(1){background:var(--c1)}.blk:nth-child(2){background:var(--c3);transform:translateY(14px)}.blk:nth-child(3){background:var(--c4)}
+.blk:nth-child(4){background:var(--c2)}.blk:nth-child(5){background:var(--c5);transform:translateY(-8px)}.blk:nth-child(6){background:var(--c3)}
+section{padding:40px 0}
+.sec-h{margin-bottom:8px;font-size:clamp(24px,4vw,32px)}
+.sub{color:var(--muted);margin:0 0 24px;max-width:40em}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;margin-bottom:12px}
+.tab{flex:none;border:2px solid var(--line);background:var(--surface);color:var(--ink);font:500 15px "Noto Sans Thai",sans-serif;padding:8px 16px;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--navy);color:var(--bg);border-color:var(--navy)}
+.cat{border-radius:28px;padding:22px;margin-bottom:22px}
+.cat h3{font-size:22px;display:flex;gap:10px;align-items:center}
+.cat>p{margin:6px 0 16px;color:var(--muted);font-size:15px}
+.cat[data-k="1"]{background:var(--c1);--a:var(--a1)}.cat[data-k="2"]{background:var(--c2);--a:var(--a2)}
+.cat[data-k="3"]{background:var(--c3);--a:var(--a3)}.cat[data-k="4"]{background:var(--c4);--a:var(--a4)}
+.cat[data-k="5"]{background:var(--c5);--a:var(--a5)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--surface);border-radius:20px;padding:16px 18px;border:2px solid transparent;border-left:6px solid var(--a)}
+.card b{display:block;font-weight:600;color:var(--ink)}
+.card small{display:block;color:var(--a);font-weight:600;margin-bottom:4px;font-size:13px}
+.card span{font-size:14.5px;color:var(--muted);display:block}
+.hidden{display:none}
+.about{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.about div{background:var(--surface);border:2px dashed var(--line);border-radius:22px;padding:18px}
+.about h3{font-size:18px;margin-bottom:6px}.about p{margin:0;color:var(--muted);font-size:15px}
+.cta{background:var(--navy);color:var(--bg);border-radius:30px;padding:32px 24px;text-align:center}
+.cta h2{color:var(--bg);font-size:26px}.cta p{margin:10px auto 18px;max-width:30em;opacity:.9}
+.cta .btn{background:var(--bg);color:var(--navy);border-color:var(--bg)}
+footer{padding:28px 0 40px;color:var(--muted);font-size:13.5px;text-align:center}
+@media(prefers-reduced-motion:no-preference){.blk{animation:pop .7s both}.blk:nth-child(2){animation-delay:.1s}.blk:nth-child(3){animation-delay:.2s}.blk:nth-child(4){animation-delay:.3s}.blk:nth-child(5){animation-delay:.4s}.blk:nth-child(6){animation-delay:.5s}}
+@keyframes pop{from{opacity:0;scale:.6}to{opacity:1;scale:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="logo" href="#top">🧸 ก้าวน้อย</a>
+  <nav><a href="#approaches">แนวทาง</a><a href="#about">เกี่ยวกับเรา</a><a href="#contact">ปรึกษา</a></nav>
+</header>
+
+<div class="hero" id="top">
+  <div>
+    <h1>ทุกก้าวเล็ก ๆ ของเด็ก<br>คือก้าวสำคัญของครอบครัว</h1>
+    <p>ศูนย์พัฒนาการและการบำบัดเด็ก ดูแลโดยทีมผู้เชี่ยวชาญด้วยแนวทางที่มีหลักฐานทางวิชาการ ผสานความอบอุ่นและความเข้าใจ เพื่อให้เด็กแต่ละคนเติบโตในแบบของตัวเอง</p>
+    <a class="btn" href="#approaches">ดูแนวทางการบำบัด</a><a class="btn ghost" href="#contact">ปรึกษาเรา</a>
+  </div>
+  <div class="blocks" aria-hidden="true"><div class="blk">💬</div><div class="blk">🌱</div><div class="blk">🧠</div><div class="blk">🖐️</div><div class="blk">🏡</div><div class="blk">🎈</div></div>
+</div>
+
+<section id="approaches">
+  <h2 class="sec-h">แนวทางการดูแลของเรา</h2>
+  <p class="sub">จัดเป็น 5 หมวด เพื่อให้ผู้ปกครองเข้าใจง่าย และเลือกคุยกับผู้เชี่ยวชาญได้ตรงจุด</p>
+  <div class="tabs" role="tablist" aria-label="หมวดหมู่"></div>
+  <div id="cats"></div>
+</section>
+
+<section id="about">
+  <h2 class="sec-h">หลักการทำงานของเรา</h2>
+  <p class="sub">เราเชื่อว่าการบำบัดที่ดีเริ่มจากความเข้าใจเด็กและครอบครัว</p>
+  <div class="about">
+    <div><h3>🔍 ประเมินก่อนวางแผน</h3><p>เริ่มจากการประเมินพัฒนาการรอบด้าน เพื่อออกแบบแผนที่เหมาะกับเด็กแต่ละคน</p></div>
+    <div><h3>🤝 ผู้ปกครองคือทีมเดียวกัน</h3><p>ให้คำแนะนำและฝึกทักษะแก่ครอบครัว เพื่อให้การพัฒนาต่อเนื่องที่บ้าน</p></div>
+    <div><h3>💛 เข้าใจและปลอดภัย</h3><p>ดูแลด้วยหลัก Trauma-Informed Care ให้เด็กรู้สึกมั่นคงและได้รับความเคารพ</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="cta">
+    <h2>พร้อมเริ่มก้าวแรกไปด้วยกันไหม</h2>
+    <p>หากมีข้อสงสัยเกี่ยวกับพัฒนาการของลูก ปรึกษาผู้เชี่ยวชาญเพื่อรับคำแนะนำเบื้องต้นได้</p>
+    <a class="btn" href="#top">นัดปรึกษาผู้เชี่ยวชาญ</a>
+  </div>
+</section>
+
+<footer>ข้อมูลในเว็บไซต์นี้เป็นความรู้ทั่วไป ไม่ใช่การวินิจฉัยหรือคำแนะนำทางการแพทย์<br>แนวทางที่เหมาะสมควรกำหนดโดยผู้เชี่ยวชาญหลังการประเมินเด็กเป็นรายบุคคล</footer>
+</div>
+
+<script>
+var DATA=[
+{k:1,i:"💬",t:"Communication",th:"การสื่อสาร",d:"ช่วยให้เด็กบอกความต้องการ ความรู้สึก และเข้าใจผู้อื่นได้ดีขึ้น",items:[
+["AAC","การสื่อสารทางเลือกและเสริม","ใช้ภาพ สัญลักษณ์ หรืออุปกรณ์ช่วยให้เด็กสื่อสารได้เมื่อการพูดยังจำกัด"],
+["PECS","Picture Exchange Communication System","สอนสื่อสารโดยแลกเปลี่ยนบัตรภาพ เริ่มจากการขอสิ่งที่ต้องการ"],
+["Speech & Language","การฝึกพูดและพัฒนาภาษา","พัฒนาการเข้าใจภาษา การใช้ภาษา การออกเสียง และการสื่อสารทางสังคม"]]},
+{k:2,i:"🌱",t:"Development",th:"พัฒนาการ",d:"ส่งเสริมพัฒนาการรอบด้านผ่านความสัมพันธ์ โครงสร้าง และการประเมินที่เหมาะสม",items:[
+["DIR/Floortime","การเล่นตามความสนใจของเด็ก","ผู้ใหญ่ลงไปเล่นในโลกของเด็ก เพื่อต่อยอดการมีปฏิสัมพันธ์และอารมณ์"],
+["TEACCH","Structured Teaching","จัดสิ่งแวดล้อม ตารางภาพ และขั้นตอนให้ชัดเจน ช่วยให้เด็กคาดเดาและทำงานได้เอง"],
+["Developmental Intervention","การกระตุ้นพัฒนาการ","กิจกรรมตามช่วงวัยเพื่อเสริมทักษะที่ยังล่าช้า"],
+["Developmental Assessment","การประเมินพัฒนาการ","ดูภาพรวมทักษะของเด็กเพื่อวางแผนการช่วยเหลือ"],
+["Attachment-Based Intervention","การเสริมความผูกพัน","เสริมสายสัมพันธ์ระหว่างเด็กกับผู้ดูแลให้มั่นคงและไว้ใจกัน"]]},
+{k:3,i:"🧠",t:"Psychology",th:"จิตวิทยา",d:"ดูแลความคิด อารมณ์ และความสัมพันธ์ ผ่านการพูดคุยและการเล่น",items:[
+["CBT","Cognitive Behavioral Therapy","เชื่อมโยงความคิด อารมณ์ และพฤติกรรม เพื่อรับมือกับความกังวลและอารมณ์ยาก ๆ"],
+["Play Therapy","จิตบำบัดผ่านการเล่น","เด็กสื่อสารความรู้สึกผ่านของเล่นและการเล่นในพื้นที่ปลอดภัย"],
+["CCPT","Child-Centered Play Therapy","เด็กเป็นผู้นำการเล่น นักบำบัดรับฟังและสะท้อนความรู้สึกอย่างอบอุ่น"],
+["Satir Model","การบำบัดครอบครัว","เข้าใจรูปแบบการสื่อสารในครอบครัว และเสริมความรู้สึกมีคุณค่าของทุกคน"],
+["Trauma-Informed Care","การดูแลที่เข้าใจผลกระทบจากบาดแผล","ออกแบบการดูแลให้ปลอดภัย ไม่ซ้ำเติม และเคารพความรู้สึกของเด็ก"]]},
+{k:4,i:"🖐️",t:"Occupational Therapy",th:"กิจกรรมบำบัด",d:"พัฒนาการรับความรู้สึก ทักษะในชีวิตประจำวัน และการจัดการตนเอง",items:[
+["Sensory Integration","Ayres SI","กิจกรรมช่วยให้ระบบประสาทประมวลผลการสัมผัส การเคลื่อนไหว และการทรงตัวได้ดีขึ้น"],
+["ADL","Activities of Daily Living","ฝึกทักษะแต่งตัว กินข้าว สุขอนามัย และการช่วยเหลือตัวเอง"],
+["Executive Function Intervention","การฝึกทักษะการบริหารจัดการสมอง","ฝึกวางแผน จัดลำดับ ควบคุมตนเอง และความจำใช้งาน"]]},
+{k:5,i:"🏡",t:"Family & Behavior",th:"ครอบครัวและพฤติกรรม",d:"สนับสนุนผู้ปกครองและช่วยให้เด็กมีพฤติกรรมที่เหมาะสมในชีวิตจริง",items:[
+["Parent Coaching","การโค้ชผู้ปกครอง","ฝึกวิธีเล่น สื่อสาร และรับมือพฤติกรรมของลูกที่บ้านอย่างมั่นใจ"],
+["PBS","Positive Behavior Support","เข้าใจเหตุผลของพฤติกรรม แล้วสอนทักษะทดแทนและเสริมแรงทางบวก"],
+["Social Skills Training","การฝึกทักษะทางสังคม","ฝึกทักษะผลัดกันเล่น เริ่มบทสนทนา อ่านสีหน้า และทำงานกับเพื่อน"],
+["ABA","Applied Behavior Analysis","สอนทักษะเป็นขั้นตอนด้วยการเสริมแรงและวัดผลอย่างเป็นระบบ"],
+["SEL","Social-Emotional Learning","เรียนรู้การรู้จักอารมณ์ ความเห็นอกเห็นใจ และการตัดสินใจอย่างรับผิดชอบ"]]}
+];
+var tabs=document.querySelector(".tabs"),box=document.getElementById("cats");
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!==undefined)e.textContent=h;return e}
+var allBtn=el("button","tab","ทั้งหมด");allBtn.setAttribute("role","tab");allBtn.dataset.k="0";allBtn.setAttribute("aria-selected","true");tabs.appendChild(allBtn);
+DATA.forEach(function(c){
+  var b=el("button","tab",c.i+" "+c.th);b.setAttribute("role","tab");b.dataset.k=c.k;b.setAttribute("aria-selected","false");tabs.appendChild(b);
+  var s=el("div","cat");s.dataset.k=c.k;
+  s.appendChild(el("h3","",c.i+" "+c.t+" · "+c.th));
+  s.appendChild(el("p","",c.d));
+  var g=el("div","grid");
+  c.items.forEach(function(it){var d=el("div","card");d.appendChild(el("small","",it[1]));d.appendChild(el("b","",it[0]));d.appendChild(el("span","",it[2]));g.appendChild(d)});
+  s.appendChild(g);box.appendChild(s);
+});
+tabs.addEventListener("click",function(e){
+  var b=e.target.closest(".tab");if(!b)return;
+  tabs.querySelectorAll(".tab").forEach(function(x){x.setAttribute("aria-selected",x===b?"true":"false")});
+  box.querySelectorAll(".cat").forEach(function(s){s.classList.toggle("hidden",b.dataset.k!=="0"&&s.dataset.k!==b.dataset.k)});
+});
+</script>
+</body>
+</html>
